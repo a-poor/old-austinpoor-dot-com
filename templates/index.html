@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <title>Austin Poor | DS Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css'>
+
+    <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}">
+  </head>
+  <body>
+    <!-- Navbar  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="./">Austin Poor – Portfolio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Header  -->
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1>Austin Poor – Data Science Portfolio</h1>
+        <p class="lead text-muted">
+          Hi, I'm Austin, a Data Scientist from New York City.
+        </p>
+        <p class="lead text-muted">
+          In 2019, I graduated from Sarah lawrence College with a bachelor's degree in computer science,
+          and in 2020 I completed an intensive 12-week data science bootcamp at Metis.
+        </p>
+        <a class="btn" href="https://www.linkedin.com/in/austinpoor/">
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>  
+        <a class="btn" href="https://medium.com/@apoor/">
+          <i class="fab fa-medium fa-2x"></i>
+        </a>
+        <a class="btn" href="https://www.github.com/a-poor/">
+          <i class="fab fa-github-square fa-2x"></i>
+        </a>
+        <a class="btn" href="mailto:austinpoor@gmail.com">
+          <i class="fas fa-envelope fa-2x"></i>
+        </a>
+      </div>
+    </section>
+    <!-- Project List  -->
+    <div id="app" class="container">
+      <p id="project-header" class="h1">Projects</p>
+      <br/>
+      <div class="row row-cols-1 row-cols-md-2">
+        {% for project in projects %}
+          <div class="col mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title">
+                  {{ project.title }}
+                </h3>
+                {% for p in project.description %}
+                <p class="card-text">
+                  {{ p }}
+                </p>
+                {% endfor %}
+                <p class="card-text">
+                  Tools Used: 
+                  {% for tool in project.tools_used %}
+                    <span class="badge badge-info">{{ tool }}</span>
+                  {% endfor %}
+                </p>
+                <p>
+                  {% for button in project.links %}
+                    <a href="{{ button.link }}" class="btn btn-light m-1">
+                      {{ button.text }}
+                    </a>
+                  {% endfor %}
+                </p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
