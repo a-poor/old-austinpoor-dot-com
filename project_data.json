@@ -2,7 +2,7 @@
     {
         "title":"NYC COVID-19 Dashboard",
         "description":[
-            "A simple dashboard for exploring data related to the COVID-19 pandemic in New York City, using data fom the NYC Health Department.",
+            "A dashboard for exploring data related to the COVID-19 pandemic in New York City, using data fom the NYC Health Department.",
             "Built with Plotly and Dash and hosted on Heroku."
         ],
         "tools_used":[
@@ -18,8 +18,8 @@
     {
         "title":"Saving the Dinosaurs with Reinforcement Learning",
         "description":[
-            "A project done at Metis. I wanted to get some experience with Reinforcement Learning, so I chose to build a bot to play Chrome's No-Internet Dinosaur Game.",
-            "I made both a heuristic bot and a reinforcement learning bot and was able to get a score of over 16,000."
+            "A project where I created a bot to play Chrome's No-Internet Dinosaur Game using both reinforcement learning and a heuristic approach.",
+            "My bot was able to get a high score of over 16,000."
         ],
         "tools_used":[
             "selenium",
@@ -35,7 +35,7 @@
     {
         "title":"Austin Recommends Movies",
         "description":[
-            "A Metis project. I combined multiple datasets to create a movie recommendation system that uses both collaborative filtering and content-based filtering to make recommendations.",
+            "I combined multiple datasets to create a movie recommendation system that uses both collaborative filtering and content-based filtering to make recommendations.",
             "My content-based filtering used a variety of NLP techniques to find similar films based on film summaries.",
             "I also created a simple prototype of my recommendation website using Flask, Bokeh, PostgreSQL, and an AWS EC2 instance."
         ],
@@ -57,7 +57,7 @@
     {
         "title":"Predicting Spotify Track Skips",
         "description":[
-            "A Metis project. I used a gradient-boosted classifier to predict how likely a user would be to skip any given song based on track data and previous listening behavior.",
+            "I built a model to predict Spotify users' skip behavior based on track data and past listening data.",
             "I also wrote up a Medium blog post about it that was published in Towards Data Science."
         ],
         "tools_used":[
@@ -108,7 +108,7 @@
     {
         "title":"NYC Craigslist Apartment Rental Pricing",
         "description":[
-            "A project done at Metis. I web-scraped Craigslist listings for NYC apartment rentals and used regression (linear, polynomial, ridge, and lasso) to make rent price predictions."
+            "I web-scraped Craigslist listings for NYC apartment rentals and used regression (linear, polynomial, ridge, and lasso) to make rent price predictions."
         ],
         "tools_used":[
             "web-scraping",
