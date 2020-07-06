@@ -2,8 +2,8 @@
     {
         "title":"ds-create",
         "description":[
+            "My first Python package hosted on PyPi!",
             "A simple CLI program (inspired by create-react-app) for creating program templates.",
-            "My first Python package hosted on PyPi.",
             "Stores a folder's contents as template that can be cloned again and again."
         ],
         "tools_used":[
