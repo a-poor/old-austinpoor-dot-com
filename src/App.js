@@ -5,7 +5,7 @@ import './App.css';
 import 'antd/dist/antd.css';
 import { Layout, Menu, BackTop, Dropdown, Typography } from 'antd';
 
-import { MenuOutlined, CodeFilled } from '@ant-design/icons';
+import { MenuOutlined } from '@ant-design/icons';
 
 import Home from "./Home.js";
 import Projects from "./Projects.js";
@@ -33,19 +33,12 @@ function HeaderMenu({setTab}) {
 }
 
 
-function CompactHeader({setTab}) {
+function CompactHeader({setTab, myLogo}) {
   const menu = <HeaderMenu setTab={setTab} />;
   return (
     <Header style={{ position: 'inline', zIndex: 1, width: '100%' }}>
-      <div style={{  }}>
-        {/* <div className="logo">
-          <CodeFilled style={{ color:'white' }} />
-        </div> */}
-
-        <div className="my-logo">
-          <CodeFilled style={{  }} />
-        </div>
-
+      <div>
+        { myLogo }
         <div style={{ float:'right' }}>
           <Dropdown overlay={menu} style={{ maxWidth: 1200, float:'right' }}>
             <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
@@ -58,16 +51,11 @@ function CompactHeader({setTab}) {
   );
 }
 
-function FullHeader({setTab}) {
+function FullHeader({setTab, myLogo}) {
   return (
     <Header style={{ position: 'inline', zIndex: 1, width: '100%' }}>
       <div style={{ maxWidth: 1200, margin: "auto" }}>
-        {/* <div className="logo"></div> */}
-        {/* <div className="logo">
-          <APLogo style={{  }}/>
-        </div> */}
-        <APLogo style={{  }}/>
-        {/* <Text size={4} style={{ color:'white', layout:'inline' }}>AustinPoor.com</Text> */}
+        { myLogo }
         <Menu className="my-menu" theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
           <Menu.Item key="1" onClick={() => setTab("home")}>Home</Menu.Item>
           <Menu.Item key="2" onClick={() => setTab("projects")}>Projects</Menu.Item>
@@ -80,13 +68,13 @@ function FullHeader({setTab}) {
 }
 
 
-function AppOuter({ children, setTab }) {
+function AppOuter({ children, setTab, myLogo }) {
   const windowSize = useWindowSize();
-  const MyHeader = windowSize.width < 650 ?  CompactHeader : FullHeader;
+  const MyHeader = windowSize.width < 750 ?  CompactHeader : FullHeader;
 
   return (
     <>
-      <MyHeader setTab={setTab} />
+      <MyHeader setTab={setTab} myLogo={myLogo} />
 
       <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
         <div className="site-layout-background" style={{ padding: 24, minHeight: 380, maxWidth: 1200, margin: "auto" }}>
@@ -111,11 +99,21 @@ function App() {
       return <About/>;
     return <Home/>;
   };
+  const myLogo = (
+    <APLogo style={{ 
+      width: "200px", 
+      layout: "inline", 
+      height: "40px",
+      background: "rgba(255, 255, 255, 0.2)",
+      margin: "12px 24px 12px 0",
+      float: "left",
+      borderRadius: "5px"
+    }}/>
+  );
   return (
     <div className="App">
       <BackTop />
-      <AppOuter setTab={setTab}>
-        <APLogo className="logo" style={{ width: "500px", backgroundColor: "red" }}/>
+      <AppOuter setTab={setTab} myLogo={myLogo}>
         { getPage(pageNum) }
       </AppOuter>
     </div>
