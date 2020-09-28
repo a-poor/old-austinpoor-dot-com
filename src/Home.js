@@ -4,8 +4,6 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import { Typography, Divider, Button } from 'antd';
 
-// const { useState } = React;
-
 const { Title, Text, Link, Paragraph } = Typography;
 
 

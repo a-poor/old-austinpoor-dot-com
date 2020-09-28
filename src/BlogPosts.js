@@ -2,18 +2,31 @@
 import React from 'react';
 
 import 'antd/dist/antd.css';
-import { Typography, Divider } from 'antd';
+import { Typography, Divider, Card, Space, Spin } from 'antd';
 
 // const { useState } = React;
 
 const { Title, Text, Link, Paragraph } = Typography;
 
+function LoadingBlogPosts() {
+    return (
+        <div style={{ width: "500px", textAlign: "center", margin: "auto" }}> 
+            <Card bordered={false}>
+                <Space direction="vertical">
+                    <Title level={4}>Loading Blog Posts</Title>
+                    <Spin size="large"/>
+                </Space>
+            </Card>
+        </div>
+    );
+}
 
 function BlogPosts() {
   return (
     <>
         <Title>Blog Posts</Title>
         <Divider />
+        <LoadingBlogPosts />
         <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget mauris nunc. Suspendisse tellus ex, dapibus at mollis eget, gravida id augue. Etiam mattis eu eros id tristique. Curabitur quis auctor velit, sed ornare lacus. Nullam dolor tellus, eleifend a suscipit quis, egestas eu sem. Aenean id eleifend sem, nec gravida diam. Aliquam ultricies convallis luctus. Mauris auctor ultrices sapien a sollicitudin. Nam sit amet laoreet sapien. Curabitur eget rutrum neque. Phasellus ut orci diam. Morbi eu erat vel turpis faucibus rutrum. Sed vitae gravida tellus.
         </Paragraph>
