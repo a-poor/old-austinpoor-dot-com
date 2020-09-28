@@ -2,7 +2,7 @@
 import React from 'react';
 
 import 'antd/dist/antd.css';
-import { Typography, Divider, Card, Tag } from 'antd';
+import { Typography, Divider, Card, Tag, Button, Space } from 'antd';
 
 const { useState } = React; 
 
@@ -18,7 +18,11 @@ function AProject({title,description,tools_used,links}) {
             <Divider orientation="left">Tags</Divider>
             { tools_used.map(t => <Tag>{t}</Tag>) }
             <Divider orientation="left">Links</Divider>
-            { links.map(l => <Tag><a href={l.link} >{l.text}</a></Tag>) }
+            <Space>
+                { links.map(l => (
+                    <Button type="primary" href={l.link} >{l.text}</Button>
+                )) }
+            </Space>
         </Card>
     );
 }
@@ -54,6 +58,10 @@ function Projects() {
   return (
     <>
         <Title>Projects</Title>
+        <Divider />
+        <Paragraph>
+            Here's a list of some projects I've created...
+        </Paragraph>
         <Divider />
         <ProjectList />
     </>

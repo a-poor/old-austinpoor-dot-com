@@ -1,14 +1,14 @@
 
-html body {
+html body #root {
   margin: 0px;
   padding: 0px;
   background-color: #f0f2f5;
 }
 
-#root {
+/* #root {
   margin: 0px;
   padding: 0px;
-}
+} */
 
 #components-layout-demo-fixed .logo {
   width: 120px;
@@ -21,7 +21,29 @@ html body {
   background: #fff;
 }
 
-/* @import 'antd/dist/antd.css'; */
+/* .my-menu {
+  color: red;
+  font-family: cursive;
+  display: inline;
+} */
+
+.my-logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: left;
+
+  padding: 5;
+  font-size: 20;
+  color: white;
+}
+.my-logo > span {
+  margin: 0;
+  margin-top: -20px;
+  padding: 0;
+}
+
 
 .site-layout-content {
   background: #fff;
@@ -35,9 +57,9 @@ html body {
   margin: 16px 24px 16px 0;
   float: left;
 }
-  [data-theme="dark"] .site-layout-content {
-    background: #141414;
-  }
-  [data-theme="dark"] .logo {
-    background: rgba(255,255,255,0.3);
-  }
+[data-theme="dark"] .site-layout-content {
+  background: #141414;
+}
+[data-theme="dark"] .logo {
+  background: rgba(255,255,255,0.3);
+}

@@ -29,6 +29,12 @@ function BlogPosts() {
         <Paragraph>
             Donec sed libero consequat, blandit nulla vitae, molestie nunc. Morbi dapibus mi quis sem mollis rutrum. Fusce consectetur, erat non fringilla euismod, purus magna aliquet odio, ac porttitor magna tellus ut nibh. Curabitur at eros ac tellus pretium tristique. Duis sit amet maximus nulla. Suspendisse a lacus volutpat, sollicitudin urna at, maximus elit. Aenean tincidunt commodo pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nibh imperdiet, porta urna euismod, pulvinar justo. 
         </Paragraph>
+        <Paragraph>
+            Suspendisse vel aliquet dolor. Maecenas porttitor vehicula egestas. Aliquam ac pretium mauris, molestie gravida justo. Morbi vitae sapien eget erat vestibulum molestie ac id sem. Praesent ultrices velit sem, vel auctor metus auctor eget. Nulla euismod tortor a purus eleifend, quis luctus elit faucibus. Nunc volutpat sem non nisi sollicitudin volutpat. In eleifend orci quis risus viverra laoreet eget eget metus. Mauris consectetur, nisl id ullamcorper ultrices, magna est fermentum neque, a dignissim metus lectus eu dolor. Maecenas leo mi, blandit at augue tincidunt, porta tristique ante. Praesent ornare suscipit elit quis dictum. Pellentesque in imperdiet justo. Aenean ullamcorper, metus sed elementum fermentum, libero ligula euismod velit, vel vulputate velit ligula non dui. Aenean maximus purus sed volutpat interdum. In hac habitasse platea dictumst. Integer eu lacus ac mi condimentum dictum.
+        </Paragraph>
+        <Paragraph>
+            Donec sed libero consequat, blandit nulla vitae, molestie nunc. Morbi dapibus mi quis sem mollis rutrum. Fusce consectetur, erat non fringilla euismod, purus magna aliquet odio, ac porttitor magna tellus ut nibh. Curabitur at eros ac tellus pretium tristique. Duis sit amet maximus nulla. Suspendisse a lacus volutpat, sollicitudin urna at, maximus elit. Aenean tincidunt commodo pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nibh imperdiet, porta urna euismod, pulvinar justo. 
+        </Paragraph>
     </>
   );
 }
