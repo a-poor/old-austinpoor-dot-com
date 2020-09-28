@@ -26,11 +26,15 @@ function About() {
   return (
     <>
         <Title>About Me</Title>
+        <Divider />
         <Paragraph>
             My name is Austin. I'm a Junior Data Scientist living in New York City.
         </Paragraph>
         <Paragraph>
-            In 2019, I graduated from Sarah Lawrence College with a bachelor's degree in computer science, and in 2020 I completed an intensive 12-week data science bootcamp at Metis. Between Sarah Lawrence and Metis, I learned 
+            In 2019, I graduated from Sarah Lawrence College with a bachelor's degree in computer science, and in 2020 I completed an intensive 12-week data science bootcamp at Metis.
+        </Paragraph>
+        <Paragraph>
+            Between Sarah Lawrence and Metis, I learned...
         </Paragraph>
         <Paragraph>
             Before Sarah Lawrence, I worked for 3 years at CHRLX, a commercial animation studio in NYC, as the Executive Creative Director's assistant. At CHRLX, I 
