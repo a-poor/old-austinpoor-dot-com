@@ -3,7 +3,8 @@
         "title":"Type-Wrap",
         "description":[
             "A tiny Python package for function argument typechecking.",
-            "The package only contains two decorator functions for checking types using function argument annotations. \"typewrap.checkInputs\" checks inputs and \"typewrap.checkInputs\" checks both inputs and outputs."
+            "The package only contains two decorator functions for checking types using function argument annotations.",
+            "\"typewrap.checkInputs\" checks inputs and \"typewrap.checkInputs\" checks both inputs and outputs."
         ],
         "tools_used":[
             "python",
