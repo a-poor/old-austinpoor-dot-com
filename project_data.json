@@ -29,13 +29,13 @@
             "javascript"
         ],
         "links":[
-            {"text":"ObservableHQ Notebook","link":"https://observablehq.com/@a-poor/exploring-artist-representation-data"},
+            {"text":"ObservableHQ Notebook","link":"https://observablehq.com/@a-poor/exploring-artist-representation-data"}
         ]
     },
     {
         "title":"D3 – Visualizing Common Distributions",
         "description":[
-            "Using D3 and ObservableHQ to visualize some common probability distributions with various parameters.",
+            "Using D3 and ObservableHQ to visualize some common probability distributions with various parameters."
         ],
         "tools_used":[
             "observablehq",
@@ -43,13 +43,13 @@
             "javascript"
         ],
         "links":[
-            {"text":"ObservableHQ Notebook","link":"https://observablehq.com/@a-poor/visualizing-distributions"},
+            {"text":"ObservableHQ Notebook","link":"https://observablehq.com/@a-poor/visualizing-distributions"}
         ]
     },
     {
         "title":"D3 – Visualizing Bayesian Thinking",
         "description":[
-            "Using D3 and ObservableHQ to create an interactive visualization of the \"Librarian vs Farmer\" question from Daniel Kahneman’s book Thinking, Fast and Slow, from a Bayesian perspective.",
+            "Using D3 and ObservableHQ to create an interactive visualization of the \"Librarian vs Farmer\" question from Daniel Kahneman’s book Thinking, Fast and Slow, from a Bayesian perspective."
         ],
         "tools_used":[
             "observablehq",
@@ -57,7 +57,7 @@
             "javascript"
         ],
         "links":[
-            {"text":"ObservableHQ Notebook","link":"https://observablehq.com/@a-poor/visualizing-bayesian-thinking"},
+            {"text":"ObservableHQ Notebook","link":"https://observablehq.com/@a-poor/visualizing-bayesian-thinking"}
         ]
     },
     
