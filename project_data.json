@@ -1,5 +1,67 @@
 [
     {
+        "title":"Type-Wrap",
+        "description":[
+            "A tiny Python package for function argument typechecking.",
+            "The package only contains two decorator functions for checking types using function argument annotations. \"typewrap.checkInputs\" checks inputs and \"typewrap.checkInputs\" checks both inputs and outputs."
+        ],
+        "tools_used":[
+            "python",
+            "pypi",
+            "type-checking",
+            "decorators"
+        ],
+        "links":[
+            {"text":"GitHub","link":"https://github.com/a-poor/typewrap"},
+            {"text":"PyPi Package","link":"https://pypi.org/project/typewrap/"}
+        ]
+    },
+    
+    {
+        "title":"D3 – Exploring Gender Representation",
+        "description":[
+            "Using D3 and ObservableHQ to visualize the unbalanced gender representation among artists in US museums.",
+            "Read more about about the data and see the visual at the link below."
+        ],
+        "tools_used":[
+            "observablehq",
+            "d3",
+            "javascript"
+        ],
+        "links":[
+            {"text":"ObservableHQ Notebook","link":"https://observablehq.com/@a-poor/exploring-artist-representation-data"},
+        ]
+    },
+    {
+        "title":"D3 – Visualizing Common Distributions",
+        "description":[
+            "Using D3 and ObservableHQ to visualize some common probability distributions with various parameters.",
+        ],
+        "tools_used":[
+            "observablehq",
+            "d3",
+            "javascript"
+        ],
+        "links":[
+            {"text":"ObservableHQ Notebook","link":"https://observablehq.com/@a-poor/visualizing-distributions"},
+        ]
+    },
+    {
+        "title":"D3 – Visualizing Bayesian Thinking",
+        "description":[
+            "Using D3 and ObservableHQ to create an interactive visualization of the \"Librarian vs Farmer\" question from Daniel Kahneman’s book Thinking, Fast and Slow, from a Bayesian perspective.",
+        ],
+        "tools_used":[
+            "observablehq",
+            "d3",
+            "javascript"
+        ],
+        "links":[
+            {"text":"ObservableHQ Notebook","link":"https://observablehq.com/@a-poor/visualizing-bayesian-thinking"},
+        ]
+    },
+    
+    {
         "title":"ds-create",
         "description":[
             "My first Python package hosted on PyPi!",
