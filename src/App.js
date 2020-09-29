@@ -92,16 +92,19 @@ function AppOuter({ children, setTab, myLogo }) {
 }
 
 function App() {
-  const [ pageNum, setTab ] = useState("home");
-  const getPage = name => {
-    if (name === "projects") 
-      return <Projects/>;
-    if (name === "blog")
-      return <BlogPosts/>;
-    if (name === "about")
-      return <About/>;
-    return <Home/>;
-  };
+  const [ name, setTab ] = useState("home");
+   
+  let CurrentPage;
+  if (name === "projects") 
+    CurrentPage = Projects;
+  else if (name === "blog")
+    CurrentPage = BlogPosts;
+  else if (name === "about")
+    CurrentPage = About;
+  else 
+    CurrentPage = Home;
+
+
   const myLogo = (
     <APLogo style={{ 
       width: "200px", 
@@ -117,7 +120,7 @@ function App() {
     <div className="App">
       <BackTop />
       <AppOuter setTab={setTab} myLogo={myLogo}>
-        { getPage(pageNum) }
+        <CurrentPage />
       </AppOuter>
     </div>
   );

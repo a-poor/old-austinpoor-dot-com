@@ -1,7 +1,17 @@
 
 import React from 'react';
 import 'antd/dist/antd.css';
-import { Typography, Divider, Card, Tag, Button, Space, Row, Col } from 'antd';
+import { 
+    Typography, 
+    Divider, 
+    Card, 
+    Tag, 
+    Button, 
+    Space, 
+    Row, 
+    Col, 
+    Modal 
+} from 'antd';
 import useWindowSize from './useWindowSize.js';
 
 import LoadingCard from "./LoadingCard.js";
@@ -14,21 +24,44 @@ const { Title, Text, Link, Paragraph } = Typography;
 const dataUrl = "https://raw.githubusercontent.com/a-poor/austinpoor-dot-com/master/project_data.json";
 
 function AProject({ title, description, tools_used, links }) {
+    const [ projOpen, setProjOpen ] = useState(false);
     return (
         <div style={{ margin: "auto", padding: "10px", height: "100%"  }}>
-            <Card style={{ margin: "auto" }}>
+            <Card style={{ margin: "auto" }} onClick={() => setProjOpen(true)}>
                 <Title level={4}>{title}</Title>
-                {description.map(d => (<p>{d}</p>))}
-                <Divider orientation="left">Tags</Divider>
-                { tools_used.map(t => <Tag>{t}</Tag>) }
-                <Divider orientation="left">Links</Divider>
+                <Paragraph ellipsis>{ description }</Paragraph>
+                <Divider style={{ color: "#a0a0a0" }} orientation="left">Tags</Divider>
+                { tools_used.map((t,ti) => <Tag key={ti}>{t}</Tag>) }
+                <Divider style={{ color: "#a0a0a0" }} orientation="left">Links</Divider>
                 <Space>
-                    { links.map(l => (
-                        <Button type="primary" href={l.link} >{l.text}</Button>
+                    { links.map((l,li) => (
+                        <Button key={li}type="primary" href={l.link} >{l.text}</Button>
                     )) }
                 </Space>
             </Card>
+            <ProjectModal {...{title, description, tools_used, links, projOpen, setProjOpen}} />
         </div>
+    );
+}
+
+function ProjectModal({ title, description, tools_used, links, projOpen, setProjOpen }) {
+    return (
+        <Modal
+            title={title}
+            visible={projOpen}
+            onOk={() => setProjOpen(false)}
+            onCancel={() => setProjOpen(false)}
+        >
+            <Paragraph>{ description }</Paragraph>
+            <Divider style={{ color: "#a0a0a0" }} orientation="left">Tags</Divider>
+            { tools_used.map((t,ti) => <Tag key={ti}>{t}</Tag>) }
+            <Divider style={{ color: "#a0a0a0" }} orientation="left">Links</Divider>
+            <Space>
+                { links.map((l,li) => (
+                    <Button key={li}type="primary" href={l.link} >{l.text}</Button>
+                )) }
+            </Space>
+        </Modal>
     );
 }
 
@@ -47,10 +80,10 @@ function ProjectLoadError() {
 function OneColProjects({ projData }) {
     return (
         <>
-            {projData.map(p => (
-                <Row>
-                    <Col span={24}>
-                        <AProject {...p} />
+            {projData.map((p,pi) => (
+                <Row key={pi}>
+                    <Col key={pi} span={24}>
+                        <AProject key={pi} {...p} />
                     </Col>
                 </Row>
             ))}
@@ -70,14 +103,14 @@ function reshapeArray(arr) {
 
 function TwoColProjects({ projData }) {
     const newProjData = reshapeArray(projData);
-    console.log(newProjData);
+    // console.log(newProjData);
     return (
         <>
-            {newProjData.map(r => (
-                <Row style={{ width: "100%" }}>
-                    { r.map(p => (
-                        <Col span={12} style={{ margin: 0, height: "100%" }}>
-                            <AProject {...p} />
+            {newProjData.map((r,ri) => (
+                <Row key={ri} style={{ width: "100%" }}>
+                    { r.map((p,pi) => (
+                        <Col key={pi} span={12} style={{ margin: 0, height: "100%" }}>
+                            <AProject key={pi} {...p} />
                         </Col>
                     )) }
                 </Row>
@@ -103,7 +136,7 @@ function ProjectList() {
     const NColProjects = useOneCol ? OneColProjects : TwoColProjects;
 
     if (projData === "loading") return <LoadingProjects />;
-    if (projData.length === undefined) return <ProjectLoadError />;
+    if (projData.length === 0) return <ProjectLoadError />;
 
     return (
         <Space size={ 500 } style={{ width: "100%" }} direction="vertical">

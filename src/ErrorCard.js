@@ -5,7 +5,7 @@ const { Text } = Typography;
 
 function ErrorCard({ title, link }) {
     return (
-        <div style={{ width: "500px", textAlign: "center", margin: "auto" }}> 
+        <div style={{ maxWidth: "500px", textAlign: "center", margin: "auto" }}> 
             <Card bordered={false}>
                 <Empty 
                     description={
