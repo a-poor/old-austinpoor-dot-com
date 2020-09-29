@@ -20,6 +20,10 @@ const { Title, Text } = Typography;
 const { Header, Content, Footer } = Layout;
 
 
+const DATA_URL = "https://raw.githubusercontent.com/a-poor/austinpoor-dot-com/master/project_data.json";
+
+
+
 function HeaderMenu({setTab}) {
   return (
     <Menu theme="dark" defaultSelectedKeys={["1"]}>
