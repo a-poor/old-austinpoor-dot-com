@@ -15,22 +15,46 @@ import APLogo from "./APLogo.js";
 
 import useWindowSize from "./useWindowSize.js";
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 const { useState, useEffect  } = React;
 const { Title, Text } = Typography;
 const { Header, Content, Footer } = Layout;
 
 
 const DATA_URL = "https://raw.githubusercontent.com/a-poor/austinpoor-dot-com/master/project_data.json";
+// const DATA_URL = "/project_data.json";
 
 
 
-function HeaderMenu({setTab}) {
+function HeaderMenu({menuTab, setTab}) {
   return (
     <Menu theme="dark" defaultSelectedKeys={["1"]}>
-      <Menu.Item key="1" onClick={() => setTab("home")}>Home</Menu.Item>
-      <Menu.Item key="2" onClick={() => setTab("projects")}>Projects</Menu.Item>
-      <Menu.Item key="3" onClick={() => setTab("blog")}>Blog Posts</Menu.Item>
-      <Menu.Item key="4" onClick={() => setTab("about")}>About Me</Menu.Item>
+      <Menu.Item key="1">
+        <Link to="/">
+          Home
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <Link to="/projects">
+          Projects
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="3">
+        <Link to="/blog">
+          Blog Posts
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="4">
+        <Link to="/about">
+          About Me
+        </Link>
+      </Menu.Item>
     </Menu>
   );
 }
@@ -60,10 +84,26 @@ function FullHeader({setTab, myLogo}) {
       <div style={{ maxWidth: 1200, margin: "auto" }}>
         { myLogo }
         <Menu className="my-menu" theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
-          <Menu.Item key="1" onClick={() => setTab("home")}>Home</Menu.Item>
-          <Menu.Item key="2" onClick={() => setTab("projects")}>Projects</Menu.Item>
-          <Menu.Item key="3" onClick={() => setTab("blog")}>Blog Posts</Menu.Item>
-          <Menu.Item key="4" onClick={() => setTab("about")}>About Me</Menu.Item>
+          <Menu.Item key="1">
+            <Link to="/">
+              Home
+            </Link>
+          </Menu.Item>
+          <Menu.Item key="2">
+            <Link to="/projects">
+              Projects
+            </Link>
+          </Menu.Item>
+          <Menu.Item key="3">
+            <Link to="/blog">
+              Blog Posts
+            </Link>
+          </Menu.Item>
+          <Menu.Item key="4">
+            <Link to="/about">
+              About Me
+            </Link>
+          </Menu.Item>
         </Menu>
       </div>
     </Header>
@@ -71,7 +111,7 @@ function FullHeader({setTab, myLogo}) {
 }
 
 
-function AppOuter({ children, setTab, myLogo }) {
+function AppOuter({ children, menuTab, setTab, myLogo }) {
   const windowSize = useWindowSize();
   const MyHeader = windowSize.width < 750 ?  CompactHeader : FullHeader;
 
@@ -92,37 +132,59 @@ function AppOuter({ children, setTab, myLogo }) {
 }
 
 function App() {
-  const [ name, setTab ] = useState("home");
-   
-  let CurrentPage;
-  if (name === "projects") 
-    CurrentPage = Projects;
-  else if (name === "blog")
-    CurrentPage = BlogPosts;
-  else if (name === "about")
-    CurrentPage = About;
-  else 
-    CurrentPage = Home;
-
-
   const myLogo = (
-    <APLogo style={{ 
-      width: "200px", 
-      layout: "inline", 
-      height: "40px",
-      background: "rgba(255, 255, 255, 0.2)",
-      margin: "12px 24px 12px 0",
-      float: "left",
-      borderRadius: "5px"
-    }}/>
+    <Link to="/">
+      <APLogo style={{ 
+        width: "200px", 
+        layout: "inline", 
+        height: "40px",
+        background: "rgba(255, 255, 255, 0.2)",
+        margin: "12px 24px 12px 0",
+        float: "left",
+        borderRadius: "5px"
+      }}/>
+    </Link>
   );
+
+  const [ menuTab, setTab ] = useState("home");
+  const [ projData, setProjects ] = useState([]);
+  useEffect(() => {
+    fetch(DATA_URL)
+        .then(r => r.json())
+        .then(p => setProjects(p))
+        .catch(err => {
+          setProjects([])
+          console.log("Error loading projects")
+        });
+    console.log("Done")
+  },[]);
+
   return (
-    <div className="App">
-      <BackTop />
-      <AppOuter setTab={setTab} myLogo={myLogo}>
-        <CurrentPage />
-      </AppOuter>
-    </div>
+    <Router>
+      <div className="App">
+        <BackTop />
+        <AppOuter myLogo={myLogo} menuTab={menuTab} setTab={setTab}>
+          <Switch>
+          <Route path="/about">
+              {/* { setTab("about") } */}
+              <About />
+            </Route>
+            <Route path="/blog">
+             {/* { setTab("blog") } */}
+              <BlogPosts />
+            </Route>
+            <Route path="/projects">
+             {/* { setTab("projects") } */}
+              <Projects projData={projData}/>
+            </Route>
+            <Route path="/">
+              {/* { setTab("home") } */}
+              <Home projData={projData}/>
+            </Route>
+          </Switch>
+        </AppOuter>
+        </div>  
+    </Router>
   );
 }
 

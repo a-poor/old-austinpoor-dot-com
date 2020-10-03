@@ -120,23 +120,16 @@ function TwoColProjects({ projData }) {
 }
 
 
-function ProjectList() {
+function ProjectList({ projData }) {
 
-    const [ projData, setProjects ] = useState("loading");
-
-    useEffect(() => {
-        fetch(dataUrl)
-            .then(r => r.json())
-            .then(p => { setProjects(p) })
-            .catch(err => setProjects([]));
-    })
+    console.log(`Found ${projData.length} projects.`)
 
     const pageSize = useWindowSize();
     const useOneCol = pageSize.width < 1000;
     const NColProjects = useOneCol ? OneColProjects : TwoColProjects;
 
-    if (projData === "loading") return <LoadingProjects />;
-    if (projData.length === 0) return <ProjectLoadError />;
+    if (projData.length === 0) return <LoadingProjects />;
+    if (projData === undefined) return <ProjectLoadError />;
 
     return (
         <Space size={ 500 } style={{ width: "100%" }} direction="vertical">
@@ -146,7 +139,7 @@ function ProjectList() {
 }
 
 
-function Projects() {
+function Projects({ projData }) {
     
     
 
@@ -158,7 +151,7 @@ function Projects() {
                 Here's a list of some projects I've created...
             </Paragraph>
             <Divider />
-            <ProjectList />
+            <ProjectList projData={projData}/>
         </>
   );
 }

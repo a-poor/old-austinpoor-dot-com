@@ -43,29 +43,13 @@ function About() {
             In 2019, I graduated from Sarah Lawrence College with a bachelor's degree in computer science, and in 2020 I completed an intensive 12-week data science bootcamp at Metis.
         </Paragraph>
         <Paragraph>
-            Between Sarah Lawrence and Metis, I learned...
+            Metis is a highly selective, accredited 12-week immersive data science bootcamp focused on Python, statistical modeling, machine learning, visualization, and communication of results.
         </Paragraph>
         <Paragraph>
-            Before Sarah Lawrence, I worked for 3 years at CHRLX, a commercial animation studio in NYC, as the Executive Creative Director's assistant. At CHRLX, I 
+            Before Sarah Lawrence, I worked for 3 years at CHRLX, a commercial animation studio in NYC, as the Executive Creative Director's assistant. At CHRLX, I was rsponsible for managing Executive Creative Director's priorities, schedule, and following employee task progress. On behalf of the ECD, I coordinated with producers and technical staff on client project delivery assignments and issue resolution. Further, served as Fill-in technical resource on multiple projects. Worked with clients such as Nike, Cinnamon Toast Crunch, Verizon FiOS, and Subway.
         </Paragraph>
-
         <Divider />
-
         <Title level={3}>Contact Me</Title>
-
-        {/* <List
-            style={{ fontSize:20 }}
-            size="large"
-            header={""}
-            footer={""}
-            bordered
-            dataSource={contactData}
-            renderItem={item => (
-                <List.Item>
-                    {item.icon} <Text strong>{item.name}:</Text> <Link href={item.link} target="_blank">{item.value}</Link>
-                </List.Item>
-            )}
-        /> */}
         <table style={{ fontSize:20, margin:0, padding:5 }}>
             <tbody>
                 {contactData.map(item => (
