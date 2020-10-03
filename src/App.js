@@ -15,7 +15,7 @@ import APLogo from "./APLogo.js";
 
 import useWindowSize from "./useWindowSize.js";
 
-const { useState } = React;
+const { useState, useEffect  } = React;
 const { Title, Text } = Typography;
 const { Header, Content, Footer } = Layout;
 
