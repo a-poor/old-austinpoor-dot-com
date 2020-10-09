@@ -7,7 +7,7 @@ import { Layout, Menu, BackTop, Dropdown, Typography } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 
 import Home from "./Home.js";
-import Projects from "./Projects.js";
+import Projects  from "./Projects.js";
 import BlogPosts from "./BlogPosts.js";
 import About from "./About.js";
 
