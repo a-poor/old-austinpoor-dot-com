@@ -48,7 +48,7 @@ function About() {
         <Paragraph>
             Before Sarah Lawrence, I worked for 3 years at CHRLX, a commercial animation studio in NYC, as the Executive Creative Director's assistant. At CHRLX, I was rsponsible for managing Executive Creative Director's priorities, schedule, and following employee task progress. On behalf of the ECD, I coordinated with producers and technical staff on client project delivery assignments and issue resolution. Further, served as Fill-in technical resource on multiple projects. Worked with clients such as Nike, Cinnamon Toast Crunch, Verizon FiOS, and Subway.
         </Paragraph>
-        <Divider />
+        {/* <Divider /> */}
         <Title level={3}>Contact Me</Title>
         <table style={{ fontSize:20, margin:0, padding:5 }}>
             <tbody>
