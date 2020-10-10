@@ -18,7 +18,8 @@ function Projects({ projData }) {
             <Title>Projects</Title>
             <Divider />
             <Paragraph>
-                Here's a list of some projects I've created...
+                Here's a list of some data science projects I've created. You can click a project card
+                to read more or use the buttons to go to the project's page.
             </Paragraph>
             <Divider />
             <ProjectList projData={projData}/>

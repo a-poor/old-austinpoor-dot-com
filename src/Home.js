@@ -19,16 +19,23 @@ function Home({ projData=[] }) {
         <Paragraph>
             My name is Austin. I'm a Junior Data Scientist living in New York City.
         </Paragraph>
-        <Button>More</Button>
+        <Button href="/about" type="primary" ghost={true} shape="round">More about me...</Button>
         <Divider />
 
         <Title level={3}>Projects</Title>
         <Paragraph>
-            <Text mark>Projects placeholder...</Text>
+            Here's a preview of some of my projects, click the "More" button below to see more.
         </Paragraph>
         <ProjectList projData={projData} maxProjects={2}/>
-        <Button href="/projects" type="primary" ghost={true} shape="round">More Projects...</Button>
+        <Button href="/projects" type="primary" ghost={true} shape="round">More projects...</Button>
 
+        <Divider />
+        <Title level={3}>Blog Posts</Title>
+        <Paragraph>
+            Check out my blog posts on Medium!
+        </Paragraph>
+        <Button href="https://medium.com/@apoor" type="primary" ghost={true} shape="round">Blog Posts</Button>
+        
         {/* <Divider />
         <Title level={3}>Blog Posts</Title>
         <Paragraph>

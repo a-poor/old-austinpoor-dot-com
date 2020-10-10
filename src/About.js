@@ -28,6 +28,7 @@ function About() {
         <Title>About Me</Title>
         <Divider />
         <Image
+            title="A picture of me, Austin"
             width={200}
             height={200}
             src="/propic.JPG"
