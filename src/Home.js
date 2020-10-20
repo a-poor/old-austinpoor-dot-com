@@ -26,7 +26,7 @@ function Home({ projData=[] }) {
         <Paragraph>
             Here's a preview of some of my projects, click the "More" button below to see more.
         </Paragraph>
-        <ProjectList projData={projData} maxProjects={2}/>
+        <ProjectList projData={projData} maxProjects={4}/>
         <Button href="/projects" type="primary" ghost={true} shape="round">More projects...</Button>
 
         <Divider />

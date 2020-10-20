@@ -27,8 +27,8 @@ const { Title, Text } = Typography;
 const { Header, Content, Footer } = Layout;
 
 
-const DATA_URL = "https://raw.githubusercontent.com/a-poor/austinpoor-dot-com/master/project_data.json";
-// const DATA_URL = "/project_data.json";
+// const DATA_URL = "https://raw.githubusercontent.com/a-poor/austinpoor-dot-com/old/project_data.json";
+const DATA_URL = "/project_data.json";
 
 
 
