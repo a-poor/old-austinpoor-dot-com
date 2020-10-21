@@ -28,8 +28,7 @@ function BlogPosts() {
         <Divider />
         {/* <LoadingBlogPosts /> */}
         <Paragraph>
-            {/* You can check out my blog posts <Link href="https://medium.com/@apoor">here</Link>! */}
-            Check out my blog posts on <Link href="https://medium.com/@apoor">Medium</Link>!
+            This part of the site is still under construction. For now, check out my blog posts on <Link href="https://medium.com/@apoor">Medium</Link>!
         </Paragraph>
     </>
   );
