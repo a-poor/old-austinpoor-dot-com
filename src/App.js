@@ -19,15 +19,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useLocation
 } from "react-router-dom";
 
 const { useState, useEffect  } = React;
-const { Title, Text } = Typography;
 const { Header, Content, Footer } = Layout;
 
-
-// const DATA_URL = "https://raw.githubusercontent.com/a-poor/austinpoor-dot-com/old/project_data.json";
 const DATA_URL = "/project_data.json";
 
 
@@ -68,7 +66,7 @@ function CompactHeader({setTab, myLogo}) {
         { myLogo }
         <div style={{ float:'right' }}>
           <Dropdown overlay={menu} style={{ maxWidth: 1200, float:'right' }}>
-            <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+            <a href="#" className="ant-dropdown-link" onClick={e => e.preventDefault()}>
               <MenuOutlined style={{ fontSize: 22, color: "white" }}/>
             </a>
           </Dropdown>
@@ -78,29 +76,29 @@ function CompactHeader({setTab, myLogo}) {
   );
 }
 
-function FullHeader({setTab, myLogo}) {
+function FullHeader({setTab, menuTab, myLogo}) {
   return (
     <Header style={{ position: 'inline', zIndex: 1, width: '100%' }}>
       <div style={{ maxWidth: 1200, margin: "auto" }}>
         { myLogo }
-        <Menu className="my-menu" theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
-          <Menu.Item key="1">
+        <Menu className="my-menu" theme="dark" mode="horizontal" selectedKeys={menuTab} defaultSelectedKeys={["home"]}>
+          <Menu.Item key="home" onClick={() => setTab("home")}>
             <Link to="/">
               Home
             </Link>
           </Menu.Item>
-          <Menu.Item key="2">
+          <Menu.Item key="projects" onClick={() => setTab("projects")}>
             <Link to="/projects">
               Projects
             </Link>
           </Menu.Item>
-          <Menu.Item key="3">
+          <Menu.Item key="blog" onClick={() => setTab("blog")}>
             <Link to="/blog">
               Blog Posts
             </Link>
           </Menu.Item>
-          <Menu.Item key="4">
-            <Link to="/about">
+          <Menu.Item key="about">
+            <Link to="/about" onClick={() => setTab("about")}>
               About Me
             </Link>
           </Menu.Item>
@@ -115,9 +113,22 @@ function AppOuter({ children, menuTab, setTab, myLogo }) {
   const windowSize = useWindowSize();
   const MyHeader = windowSize.width < 750 ?  CompactHeader : FullHeader;
 
+  const location = useLocation();
+  useEffect(() => {
+    const t = location.pathname.replace("/","").toLowerCase();
+    if (t == "projects" || t == "blog" || t == "about") {
+      console.log("Change of route. Setting tab to "+t)
+      setTab(t)
+    }
+    else {
+      console.log("Change of route. Either unknown or home.")
+      setTab("home")
+    }
+  },[location.pathname]);
+
   return (
     <>
-      <MyHeader setTab={setTab} myLogo={myLogo} />
+      <MyHeader setTab={setTab} menuTab={menuTab} myLogo={myLogo} />
 
       <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
         <div className="site-layout-background" style={{ padding: 24, minHeight: 380, maxWidth: 1200, margin: "auto" }}>
@@ -156,7 +167,7 @@ function App() {
           setProjects([])
           console.log("Error loading projects")
         });
-    console.log("Done")
+    console.log("Project data loaded.")
   },[]);
 
   return (
@@ -165,7 +176,10 @@ function App() {
         <BackTop />
         <AppOuter myLogo={myLogo} menuTab={menuTab} setTab={setTab}>
           <Switch>
-          <Route path="/about">
+          <Route path="/about" onChange={() => setTab("about")}>
+              { useEffect(() => {
+                console.log("About page loaded.");
+              }) }
               {/* { setTab("about") } */}
               <About />
             </Route>

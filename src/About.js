@@ -53,8 +53,8 @@ function About() {
         <Title level={3}>Contact Me</Title>
         <table style={{ fontSize:20, margin:0, padding:5 }}>
             <tbody>
-                {contactData.map(item => (
-                    <tr>
+                {contactData.map((item,i) => (
+                    <tr key={i}>
                         <td style={{paddingRight:5}}>{item.icon}</td>
                         <td style={{padding:5}}>
                             <Text strong>{item.name}:</Text>
