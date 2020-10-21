@@ -12,8 +12,26 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.io" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>AustinPoor.com</title>
+
+
+    <meta property='og:title' content="Austin Poor's Data Science Portfolio"/>
+    <meta property='og:image' content="{{ url_for('static',filename='datascience.jpg') }}"/>
+    <meta property='og:description' content="Hi, I'm Austin, a Data Scientist from New York City. In 2019, I graduated from Sarah Lawrence College with a bachelor's degree in computer science,
+    and in 2020 I completed an intensive 12-week data science bootcamp at Metis."/>
+    <meta property='og:url' content='https://austinpoor.com'/>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-TMTLWJ4');</script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMTLWJ4"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
     <noscript>You need to enable JavaScript to run this site.</noscript>
     <div id="root"></div>
   </body>
