@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import 'antd/dist/antd.css';
-import { Layout, Menu, BackTop, Dropdown, Typography } from 'antd';
+import { Layout, Menu, BackTop, Dropdown } from 'antd';
 
 import { MenuOutlined } from '@ant-design/icons';
 
@@ -136,7 +136,8 @@ function AppOuter({ children, menuTab, setTab, myLogo }) {
         </div>
       </Content>
       <Footer style={{ textAlign: "center" }}>
-        Austin Poor ©2020
+        <p>Austin Poor © 2020</p>
+        <p>Made with React and create-react-app. Check it out on <a href="https://github.com/a-poor/austinpoor-dot-com">GitHub</a>!</p>
       </Footer>
     </>
   );
