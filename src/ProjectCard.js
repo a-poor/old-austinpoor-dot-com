@@ -19,7 +19,7 @@ function ProjectCard({ title, description, tools_used, links }) {
         <div style={{ margin: "auto", padding: "10px", height: "100%"  }}>
             <Card style={{ margin: "auto" }} onClick={() => setProjOpen(true)}>
                 <Title level={4}>{title}</Title>
-                <Paragraph ellipsis>{ description }</Paragraph>
+                <Paragraph ellipsis>{ description.join(" ") }</Paragraph>
                 <Divider style={{ color: "#a0a0a0" }} orientation="left">Tags</Divider>
                 { tools_used.map((t,ti) => <Tag key={ti}>{t}</Tag>) }
                 <Divider style={{ color: "#a0a0a0" }} orientation="left">Links</Divider>
@@ -42,7 +42,7 @@ function ProjectModal({ title, description, tools_used, links, projOpen, setProj
             onOk={() => setProjOpen(false)}
             onCancel={() => setProjOpen(false)}
         >
-            <Paragraph>{ description }</Paragraph>
+            { description.map((d,di) => (<Paragraph key={di}>{ d }</Paragraph>) }
             <Divider style={{ color: "#a0a0a0" }} orientation="left">Tags</Divider>
             { tools_used.map((t,ti) => <Tag key={ti}>{t}</Tag>) }
             <Divider style={{ color: "#a0a0a0" }} orientation="left">Links</Divider>
