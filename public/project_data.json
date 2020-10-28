@@ -1,5 +1,39 @@
 [
     {
+        "title":"Algorithmic Color Palettes",
+        "description":[
+            "Experimenting with using ML clustering algorithms to generate color palettes from images.",
+            "Using K-Means Clustering and Agglomerative Clustering on movie stills.",
+            "Check out the GitHub repo, the blog post on Towards Data Science, or the Jupyter Notebook using Binder."
+        ],
+        "tools_used":[
+            "python",
+            "pillow",
+            "sklearn",
+            "skimage",
+            "k-means-clustering",
+            "agglomerative-clustering"
+        ],
+        "links":[
+            {"text":"GitHub","link":"https://github.com/a-poor/color-palettes"},
+            {"text":"Blog Post","link":"https://towardsdatascience.com/algorithmic-color-palettes-a110d6448b5d"},
+            {"text":"Binder","link":"https://mybinder.org/v2/gh/a-poor/color-palettes/main?filepath=color-palettes.ipynb"}
+        ]
+    },
+    {
+        "title":"Tableau COVID-19 Dashboard",
+        "description":[
+            "An interactive Tableau Public dashboard showing new cases in the US, by state."
+        ],
+        "tools_used":[
+            "tableau",
+            "excel"
+        ],
+        "links":[
+            {"text":"Tableau Public","link":"https://public.tableau.com/profile/austin.poor#!/vizhome/USCOVID-19Dashboard_16039037023120/covid-dashboard"}
+        ]
+    },
+    {
         "title":"Type-Wrap",
         "description":[
             "A tiny Python package for function argument typechecking.",
