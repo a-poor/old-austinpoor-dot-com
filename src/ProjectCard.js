@@ -42,7 +42,7 @@ function ProjectModal({ title, description, tools_used, links, projOpen, setProj
             onOk={() => setProjOpen(false)}
             onCancel={() => setProjOpen(false)}
         >
-            { description.map((d,di) => (<Paragraph key={di}>{ d }</Paragraph>) }
+            { description.map((d,di) => (<Paragraph key={di}>{ d }</Paragraph>)) }
             <Divider style={{ color: "#a0a0a0" }} orientation="left">Tags</Divider>
             { tools_used.map((t,ti) => <Tag key={ti}>{t}</Tag>) }
             <Divider style={{ color: "#a0a0a0" }} orientation="left">Links</Divider>
