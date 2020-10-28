@@ -34,6 +34,23 @@
         ]
     },
     {
+        "title":"AustinPoor.com",
+        "description":[
+            "This website! My data science portfolio, made with ReactJS and Ant Design and hosted with Heroku.",
+            "You're already here but you can follow the link below to check out the source code on GitHub."
+        ],
+        "tools_used":[
+            "react",
+            "javascript",
+            "ant-design",
+            "heroku"
+        ],
+        "links":[
+            {"text":"GitHub","link":"https://github.com/a-poor/austinpoor-dot-com"},
+            {"text":"LiveSite","link":"https://austinpoor.com"},
+        ]
+    },
+    {
         "title":"Type-Wrap",
         "description":[
             "A tiny Python package for function argument typechecking.",
